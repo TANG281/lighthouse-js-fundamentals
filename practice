@@ -1,0 +1,86 @@
+let lunchIdea = ['Gimbap', 'Fried rice', 'Mac&cheese', 'Onigiri', 'Soup', 'Pizza', 'Sandwich'];
+let upperCaseLunchIdea = lunchIdea.map(function(a) {
+    a = a.toUpperCase();
+    a += ' for lunch';
+    return a;
+});
+
+console.log(lunchIdea);
+console.log(upperCaseLunchIdea);
+// ------------------------------------------------------------------------------------------ //
+const stations = [
+  ['Big Bear Donair', 10, 'restaurant'],
+  ['Bright Lights Elementary', 50, 'school'],
+  ['Moose Mountain Community Centre', 45, 'community centre']
+];
+const chooseStations = function (stations) {
+  let goodStations = [];
+    for(let r = 0; r < stations.length; r++) {
+            if(stations[r][1] >= 20 && (stations[r][2] === 'school' || stations[r][2] === 'community centre')) {
+      goodStations.push(stations[r][0]);
+    }
+  }
+  return goodStations;
+};
+const chooseStations2 = function (stations) {
+  let chosen = [];
+  for(let a of stations) {
+    if((a[1] >= 20) && (a[2] === 'school' || a[2] === 'community centre')) {
+      chosen.push(a[0]);
+    }
+  }
+  return chosen;
+};
+console.log(chooseStations(stations));
+console.log(chooseStations2(stations));
+// ------------------------------------------------------------------------------------------ //
+const moves = ['north', 'north', 'west', 'west', 'north', 'east','north'];
+const finalPosition = function(move) {
+  let position = [0,0]
+  for(let a of moves) {
+    if(a === 'north') {
+      position[1] += 1;
+    } else if(a === 'south') {
+      position[1] -= 1;
+    } else if(a === 'west') {
+      position[0] -= 1;
+    } else if(a === 'east') {
+      position[0] += 1;
+    }
+  }
+  return position;
+}
+console.log(finalPosition(moves));
+// ------------------------------------------------------------------------------------------ //
+function ageCalculator(name, YOB, currentYear) {
+  return name + ' is ' + (currentYear - YOB) + ' years old.';
+}
+
+console.log(ageCalculator('Daisy', 2017, 2023))
+// ------------------------------------------------------------------------------------------ //
+let howManyHundreds = function(num) {
+  let a
+  if(num < 100) {
+    return 0;
+  } else {
+    a = (num - (num % 100)) / 100;
+    return a;
+  }
+}
+console.log(howManyHundreds(894), "=?", 8);
+// ------------------------------------------------------------------------------------------ //
+let calculateRectangleArea = function(l,w) {
+  if(l >= 0 && w >= 0)
+    return l * w;
+}
+let calculateTriangleArea = function(b,h) {
+  if(b >= 0 && h >= 0)
+    return b * h / 2;
+}
+let calculateCircleArea = function(r) {
+  if(r >= 0)
+    return Math.PI * r * r;
+}
+// ------------------------------------------------------------------------------------------ //
+
+
